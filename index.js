@@ -13,7 +13,7 @@ var bot = linebot({
     bot.on('message', function(event) {
     if (event.message.type = 'text') {
         var msg = event.message.text;
-        var Result;
+        var Result = '';
         var replyMsg = '';
         if(msg.indexOf('小咖 MC查詢 ') != -1){
         console.log('查詢');
@@ -25,9 +25,9 @@ var bot = linebot({
           Result = msg;
         }
         
-        event.reply(MCResult).then(function(data) {
+        event.reply(Result).then(function(data) {
         // success 
-        console.log(MCResult);
+        console.log(Result);
         }).catch(function(error) {
         // error 
         console.log('error');
