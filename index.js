@@ -17,7 +17,7 @@ var bot = linebot({
         var replyMsg = '';
         if(msg.indexOf('小咖 MC查詢 ') != -1){
         console.log('查詢');
-          var search = msg.Split(" ");
+          var search = msg.split(" ");
           console.log(search[2]);
           Result = _getJSON(search[2]);   
            console.log('Log:'+Result);       
