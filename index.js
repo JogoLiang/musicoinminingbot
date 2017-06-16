@@ -53,9 +53,9 @@ function _getJSON(code) {
   
   getJSON('http://gpumine.org:8580/api/accounts/'+code, function(error, response) {
       
-    var immature= toString(response.stats.immature/100000000);
-    var balance= toString(response.stats.balance/100000000);
-    var paid = toString(response.stats.paid/100000000);
+    var immature= (response.stats.immature/100000000).toString();
+    var balance= (response.stats.balance/100000000).toString();
+    var paid = (response.stats.paid/100000000).toString();
     var result = '<未成熟MC> '+immature+'\r\n  <已挖出來MC> '+balance+'\r\n  <已入帳MC> '+paid;
     return result;
   });
