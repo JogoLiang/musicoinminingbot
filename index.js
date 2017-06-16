@@ -52,7 +52,7 @@ var server = app.listen(process.env.PORT || 8080, function() {
 function _getJSON(code) {
   
   getJSON('http://gpumine.org:8580/api/accounts/'+code, function(error, response) {
-      
+      console.log(response) ;
     var immature= (response.stats.immature/100000000).toString();
     var balance= (response.stats.balance/100000000).toString();
     var paid = (response.stats.paid/100000000).toString();
