@@ -10,19 +10,17 @@ var bot = linebot({
 
 
 
-
-
-_bot();
-
-function _bot() {
     bot.on('message', function(event) {
     if (event.message.type = 'text') {
         var msg = event.message.text;
         var Result;
         var replyMsg = '';
         if(msg.indexOf('小咖 MC查詢 ') != -1){
+        console.log('查詢');
           var search = msg.Split(' ');
-          Result = _getJSON(search[2]);           
+          console.log(search[2]);
+          Result = _getJSON(search[2]);   
+           console.log('Log:'+Result);       
         }else{
           Result = msg;
         }
@@ -36,7 +34,7 @@ function _bot() {
         });
     }
     });
-}
+
 
 
 
@@ -54,6 +52,7 @@ var server = app.listen(process.env.PORT || 8080, function() {
 function _getJSON(code) {
   
   getJSON('http://gpumine.org:8580/api/accounts/'+code, function(error, response) {
+      
     var immature= toString(response.stats.immature/100000000);
     var balance= toString(response.stats.balance/100000000);
     var paid = toString(response.stats.paid/100000000);
