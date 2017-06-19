@@ -57,8 +57,9 @@ var bot = linebot({
             console.log('error');
             });
             }
-        }
+        
     }
+    
     });
 
 
