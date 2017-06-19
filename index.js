@@ -27,7 +27,7 @@ var bot = linebot({
         getJSON('http://gpumine.org:8580/api/accounts/'+search[2], function(error, response) {
                 console.log('resLog:'+response) ;
                 //var aa = ;
-                console.log(aa)    
+                //console.log(aa)    
                 var result = { type: 'text', text: 
                 '現在挖礦均速(30m):'+(response.currentHashrate/1000000).toFixed(6)+
                 ' \t\n 現在挖礦均速(180m):'+(response.hashrate/1000000).toFixed(6)+
