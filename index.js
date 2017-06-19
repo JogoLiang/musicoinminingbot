@@ -29,8 +29,8 @@ var bot = linebot({
                 //var aa = ;
                 //console.log(aa)    
                 var result = { type: 'text', text: 
-                '現在挖礦均速(30m):'+(response.currentHashrate/1000000).toFixed(6)+
-                ' \t\n 現在挖礦均速(180m):'+(response.hashrate/1000000).toFixed(6)+
+                '現在挖礦均速(30min):'+(response.currentHashrate/1000000).toFixed(2)+' MH'+
+                ' \t\n 現在挖礦均速(3h):'+(response.hashrate/1000000).toFixed(2)+' MH'+
                 ' \t\n 已挖出:'+(response.stats.balance/1000000000).toFixed(8)+ 
                 ' \t\n 已挖出(未運完):'+(response.stats.immature/1000000000).toFixed(8)+ 
                 ' \t\n 已入帳:'+(response.stats.paid/1000000000).toFixed(8)
