@@ -25,13 +25,19 @@ var bot = linebot({
           var search = msg.split(" ");
           //console.log(search[2]);
         getJSON('http://gpumine.org:8580/api/accounts/'+search[2], function(error, response) {
-    console.log('resLog:'+response) ;
-    var aa = (response.currentHashrate/1000000).toFixed(6);
-    console.log(aa)    
-    var result = '現在挖礦均速(30分):'+aa;
-    event.reply(result).then(function(data) {
-        // success 
-        console.log(result);
+                console.log('resLog:'+response) ;
+                //var aa = ;
+                console.log(aa)    
+                var result = { type: 'text', text: 
+                '現在挖礦均速(30m):'+(response.currentHashrate/1000000).toFixed(6)+
+                ' \t\n 現在挖礦均速(180m):'+(response.hashrate/1000000).toFixed(6)+
+                ' \t\n 已挖出:'+(response.stats.balance/100000000).toFixed(8)+ 
+                ' \t\n 已挖出(未運完):'+(response.stats.immature/100000000).toFixed(8)+ 
+                ' \t\n 已入帳:'+(response.stats.paid/100000000).toFixed(8)
+            };
+                event.reply(result).then(function(data) {
+                // success 
+                console.log(result);
         }).catch(function(error) {
         // error 
         console.log('error');
