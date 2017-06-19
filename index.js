@@ -73,8 +73,8 @@ var bot = linebot({
             }
         
     }else if(type == 'sticker'){
-        var refMsg = msg
-        event.replyMsg(msg).then(function(data) {
+        var refMsg = { stickerId =event.message.stickerId,packageId = event.message.packageId}
+        event.replyMsg(refMsg).then(function(data) {
             // success             
             console.log(msg);
             }).catch(function(error) {
