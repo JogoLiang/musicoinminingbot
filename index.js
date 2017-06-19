@@ -12,6 +12,7 @@ var bot = linebot({
 
     bot.on('message', function(event) {
     if (event.message.type = 'text') {
+        console.log(event)
         var msg = event.message.text;
         var Result = '';
         var replyMsg = '';
