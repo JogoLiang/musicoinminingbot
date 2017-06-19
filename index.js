@@ -45,7 +45,7 @@ var bot = linebot({
                 var n = Math.floor(Math.random() * Arr.length + 1)-1;  
                 Result = Arr[n];
             } else{
-                var Arr = ["a","b","c","d"];  
+                var Arr = ["好! "+msg,"你確定是在說，"+msg+"嗎?","我很認真在聽!","這是挖礦機器人! "];  
                 var n = Math.floor(Math.random() * Arr.length + 1)-1;  
                 Result = Arr[n];
             }           
