@@ -13,7 +13,7 @@ var bot = linebot({
     bot.on('message', function(event) {
         var type = event.message.type;
         console.log('這是Type:'+type)
-    if (type= 'text') {
+    if (type== 'text') {
         console.log(event)
         var msg = event.message.text;
         var Result = '';
@@ -72,7 +72,7 @@ var bot = linebot({
             });
             }
         
-    }else if(type = 'sticker'){
+    }else if(type == 'sticker'){
         var refMsg = msg
         event.replyMsg(msg).then(function(data) {
             // success             
