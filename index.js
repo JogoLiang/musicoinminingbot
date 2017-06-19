@@ -19,7 +19,7 @@ var bot = linebot({
         console.log('查詢');
           var search = msg.split(" ");
           //console.log(search[2]);
-        //   Result = _getJSON(search[2]);   
+           Result = _getJSON(search[2]);   
         //    console.log('Log:'+Result);       
         }else{
           Result = msg;
@@ -52,13 +52,9 @@ var server = app.listen(process.env.PORT || 8080, function() {
 function _getJSON(code) {
   
   getJSON('http://gpumine.org:8580/api/accounts/'+code, function(error, response) {
-      console.log('resLog:'+response) ;
-    var immature= response.stats.immature.toString();
-    console.log(immature);
-    var balance= response.stats.balance.toString();
-    var paid = response.stats.paid.toString();
-    var result = '<未成熟MC> '+immature+'\r\n  <已挖出來MC> '+balance+'\r\n  <已入帳MC> '+paid;
-    console.log(result)
+    console.log('resLog:'+response) ;
+    
+    console.log(response)    
     return result;
   });
  
