@@ -71,18 +71,18 @@ var bot = linebot({
             console.log('error');
             });
             }
-        
-    }else if(type == 'sticker'){
-        var refMsg = { stickerId =event.message.stickerId,packageId = event.message.packageId}
-        event.replyMsg(refMsg).then(function(data) {
-            // success             
-            console.log(msg);
-            }).catch(function(error) {
-            // error 
-            console.log('error');
-            });
-            
     }
+    // }else if(type == 'sticker'){
+    //     var refMsg = { stickerId =event.message.stickerId,packageId = event.message.packageId}
+    //     event.replyMsg(refMsg).then(function(data) {
+    //         // success             
+    //         console.log(msg);
+    //         }).catch(function(error) {
+    //         // error 
+    //         console.log('error');
+    //         });
+            
+    // }
     
     });
 
