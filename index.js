@@ -53,9 +53,10 @@ function _getJSON(code) {
   
   getJSON('http://gpumine.org:8580/api/accounts/'+code, function(error, response) {
     console.log('resLog:'+response) ;
-    var aa = (response.currentHashrate/1000000).toFixed();
+    var aa = (response.currentHashrate/1000000).toFixed(6);
     console.log(aa)    
-    //return result;
+    var result = '現在挖礦均速(30分):'+aa;
+    return result;
   });
  
 }
