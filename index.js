@@ -21,13 +21,14 @@ var bot = linebot({
           //console.log(search[2]);
            Result = _getJSON(search[2]);   
         //    console.log('Log:'+Result);       
+        do{Result = _getJSON(search[2]);}while(Result == undefined);
         }else{
           Result = msg;
         }
         
         event.reply(Result).then(function(data) {
         // success 
-        //console.log(Result);
+        console.log(Result);
         }).catch(function(error) {
         // error 
         console.log('error');
