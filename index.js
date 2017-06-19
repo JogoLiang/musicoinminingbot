@@ -35,7 +35,7 @@ var bot = linebot({
             });     
         
         }else{
-          Result = msg;
+          Result = '87豬 說話阿  幹';
            event.reply(Result).then(function(data) {
         // success 
         console.log(Result);
