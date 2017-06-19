@@ -19,20 +19,33 @@ var bot = linebot({
         console.log('查詢');
           var search = msg.split(" ");
           //console.log(search[2]);
-           Result = _getJSON(search[2]);   
-        //    console.log('Log:'+Result);       
-        do{Result = _getJSON(search[2]);}while(Result == undefined);
+        getJSON('http://gpumine.org:8580/api/accounts/'+search[2], function(error, response) {
+    console.log('resLog:'+response) ;
+    var aa = (response.currentHashrate/1000000).toFixed(6);
+    console.log(aa)    
+    var result = '現在挖礦均速(30分):'+aa;
+    event.reply(result).then(function(data) {
+        // success 
+        console.log(result);
+        }).catch(function(error) {
+        // error 
+        console.log('error');
+        });
+        
+            });     
+        
         }else{
           Result = msg;
-        }
-        
-        event.reply(Result).then(function(data) {
+           event.reply(Result).then(function(data) {
         // success 
         console.log(Result);
         }).catch(function(error) {
         // error 
         console.log('error');
         });
+        }
+        
+       
     }
     });
 
