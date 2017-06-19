@@ -38,7 +38,17 @@ var bot = linebot({
             });     
         
         }else{
-          Result = '87豬 說話阿  幹';
+            var user = event.source.userId;
+            if(user == 'Ua7b8fef02ed7ad95a82a9a0f2be3a6df')
+            {
+                var Arr = ["霸主中的霸豬!你在工三小?","我看你被閃電打不夠喔?","你是不是想頂桌子?","你是在渴望尛?"];  
+                var n = Math.floor(Math.random() * Arr.length + 1)-1;  
+                Result = Arr[n];
+            } else{
+                var Arr = ["a","b","c","d"];  
+                var n = Math.floor(Math.random() * Arr.length + 1)-1;  
+                Result = Arr[n];
+            }           
            event.reply(Result).then(function(data) {
         // success 
         console.log(Result);
@@ -52,6 +62,7 @@ var bot = linebot({
         Result = '別玩壞我!'
             event.reply(Result).then(function(data) {
             // success 
+            console.log(err);
             console.log(Result);
             }).catch(function(error) {
             // error 
