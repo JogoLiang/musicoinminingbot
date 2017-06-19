@@ -72,6 +72,16 @@ var bot = linebot({
             });
             }
         
+    }else if(type = 'sticker'){
+        var refMsg = msg
+        event.replyMsg(msg).then(function(data) {
+            // success             
+            console.log(msg);
+            }).catch(function(error) {
+            // error 
+            console.log('error');
+            });
+            
     }
     
     });
