@@ -54,7 +54,7 @@ function _getJSON(code) {
   getJSON('http://gpumine.org:8580/api/accounts/'+code, function(error, response) {
     console.log('resLog:'+response) ;
     
-    console.log(response)    
+    console.log(response.currentHashrate)    
     //return result;
   });
  
