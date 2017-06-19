@@ -55,7 +55,7 @@ function _getJSON(code) {
     console.log('resLog:'+response) ;
     
     console.log(response)    
-    return result;
+    //return result;
   });
  
 }
