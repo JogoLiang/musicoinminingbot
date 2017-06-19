@@ -15,6 +15,8 @@ var bot = linebot({
         var msg = event.message.text;
         var Result = '';
         var replyMsg = '';
+        console.log(msg);
+        try{
         if(msg.indexOf('小咖 MC查詢 ') != -1){
         console.log('查詢');
           var search = msg.split(" ");
@@ -45,7 +47,17 @@ var bot = linebot({
         });
         }
         
-       
+    }catch(err){
+        Result = '別玩壞我!'
+            event.reply(Result).then(function(data) {
+            // success 
+            console.log(Result);
+            }).catch(function(error) {
+            // error 
+            console.log('error');
+            });
+            }
+        }
     }
     });
 
