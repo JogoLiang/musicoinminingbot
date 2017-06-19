@@ -11,10 +11,10 @@ var bot = linebot({
 
 
     bot.on('message', function(event) {
-    if (event.message.type = 'text') {
-        console.log(event)
-        var type = event.content.contentType;
+        var type = event.message.type;
         console.log('這是Type:'+type)
+    if (type= 'text') {
+        console.log(event)
         var msg = event.message.text;
         var Result = '';
         var replyMsg = '';
