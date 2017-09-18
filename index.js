@@ -77,12 +77,13 @@ var bot = linebot({
                             previewImageUrl: 'https://memegeneratorapi.herokuapp.com/img/'+n+'/text/'+search[1]+'/B&W/W'
                         }).then(function(data) {
                     // success 
-                    console.log(Result);
+                    //console.log(Result);
                     }).catch(function(error) {
                     // error 
                     console.log('error');
                     });
-                }else if(msg.indexOf('parrotbro ') != -1)
+                }
+                else if(msg.indexOf('parrotbro ') != -1)
                 {
                     var n = Math.floor(Math.random() * 63);
                     var search = msg.split(" ");       
@@ -94,7 +95,7 @@ var bot = linebot({
                             previewImageUrl: ss
                         }).then(function(data) {
                     // success 
-                    console.log(Result);
+                    //console.log(Result);
                     }).catch(function(error) {
                     // error 
                     console.log('error');
