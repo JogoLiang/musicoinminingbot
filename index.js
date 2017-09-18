@@ -69,7 +69,7 @@ var bot = linebot({
             } 
             else{
                 if(msg.indexOf('雲龍說 ') != -1){                    
-                     var search = msg.replace('雲龍說 ');                          
+                     var search = msg.replace('雲龍說 ','');                          
                     event.reply({
                 type: 'image',
                             originalContentUrl: 'https://memegeneratorapi.herokuapp.com/img/64/text/'+search+'/B&W/W',
@@ -85,7 +85,7 @@ var bot = linebot({
                 else if(msg.indexOf('parrotbro ') != -1)
                 {
                     var n = Math.floor(Math.random() * 63);
-                    var search = msg.replace('parrotbro ');       
+                    var search = msg.replace('parrotbro ','');       
                      var ss = 'https://memegeneratorapi.herokuapp.com/img/'+n+'/text/'+search+'/B&W/W'    
                      console.log(ss)        
                     event.reply({
