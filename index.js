@@ -84,7 +84,9 @@ var bot = linebot({
                 }else if(msg.indexOf('parrotbro ') != -1)
                 {
                     var n = Math.floor(Math.random() * 63);
-                    var search = msg.split(" ");                    
+                    var search = msg.split(" ");       
+                    console.log(search)
+                    console.log(search[1])             
                     event.reply({
                 type: 'image',
                             originalContentUrl: 'https://memegeneratorapi.herokuapp.com/img/'+n+'/text/'+search[1]+'/B&W/W',
