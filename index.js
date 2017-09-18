@@ -20,40 +20,42 @@ var bot = linebot({
         var replyMsg = '';
         console.log(msg);
         try{
-        if(msg.indexOf('小咖 MC查詢 ') != -1){
-        console.log('查詢');
-          var search = msg.split(" ");
-          //console.log(search[2]);
-        getJSON('http://gpumine.org:8580/api/accounts/'+search[2], function(error, response) {
-                console.log('resLog:'+response) ;
-                //var aa = ;
-                //console.log(aa)    
-                var result = { type: 'text', text: 
-                '現在挖礦均速(30min):'+(response.currentHashrate/1000000).toFixed(2)+' MH'+
-                ' \t\n 現在挖礦均速(3h):'+(response.hashrate/1000000).toFixed(2)+' MH'+
-                ' \t\n 已挖出:'+(response.stats.balance/1000000000).toFixed(8)+ 
-                ' \t\n 已挖出(未運完):'+(response.stats.immature/1000000000).toFixed(8)+ 
-                ' \t\n 已入帳:'+(response.stats.paid/1000000000).toFixed(8)
-            };
-                event.reply(result).then(function(data) {
-                // success 
-                console.log(result);
-        }).catch(function(error) {
-        // error 
-        console.log('error');
-        });
+        // if(msg.indexOf('小咖 MC查詢 ') != -1){
+        // console.log('查詢');
+        //   var search = msg.split(" ");
+        //   //console.log(search[2]);
+        // getJSON('http://gpumine.org:8580/api/accounts/'+search[2], function(error, response) {
+        //         console.log('resLog:'+response) ;
+        //         //var aa = ;
+        //         //console.log(aa)    
+        //         var result = { type: 'text', text: 
+        //         '現在挖礦均速(30min):'+(response.currentHashrate/1000000).toFixed(2)+' MH'+
+        //         ' \t\n 現在挖礦均速(3h):'+(response.hashrate/1000000).toFixed(2)+' MH'+
+        //         ' \t\n 已挖出:'+(response.stats.balance/1000000000).toFixed(8)+ 
+        //         ' \t\n 已挖出(未運完):'+(response.stats.immature/1000000000).toFixed(8)+ 
+        //         ' \t\n 已入帳:'+(response.stats.paid/1000000000).toFixed(8)
+        //     };
+        //         event.reply(result).then(function(data) {
+        //         // success 
+        //         console.log(result);
+        // }).catch(function(error) {
+        // // error 
+        // console.log('error');
+        // });
         
-            });     
+        //     });     
         
-        }else{
+        // }else{
+             console.log("用戶:"+user+" 訊息:"+msg)
             var user = event.source.userId;
+           
             if(user == 'Ua7b8fef02ed7ad95a82a9a0f2be3a6df')
             {
                 var Arr = ["霸主中的霸豬!你在工三小?","我看你被閃電打不夠喔?","你是不是想頂桌子?","你是在渴望尛?"];  
                 var n = Math.floor(Math.random() * Arr.length + 1)-1;  
                 Result = Arr[n];
             } else{
-                var Arr = ["好! "+msg,"你確定是在說，"+msg+"嗎?","我很認真在聽!","這是挖礦機器人! "];  
+                var Arr = ["好! "+msg];  
                 var n = Math.floor(Math.random() * Arr.length + 1)-1;  
                 Result = Arr[n];
             }           
@@ -64,7 +66,7 @@ var bot = linebot({
         // error 
         console.log('error');
         });
-        }
+        // }
         
     }catch(err){
         Result = '別玩壞我!'
