@@ -86,11 +86,12 @@ var bot = linebot({
                 {
                     var n = Math.floor(Math.random() * 63);
                     var search = msg.split(" ");       
-                                 
+                     var ss = 'https://memegeneratorapi.herokuapp.com/img/'+n+'/text/'+search[1]+'/B&W/W'    
+                     console.log(ss)        
                     event.reply({
                 type: 'image',
-                            originalContentUrl: 'https://memegeneratorapi.herokuapp.com/img/'+n+'/text/'+search[1]+'/B&W/W',
-                            previewImageUrl: 'https://memegeneratorapi.herokuapp.com/img/'+n+'/text/'+search[1]+'/B&W/W'
+                            originalContentUrl: ss,
+                            previewImageUrl: ss
                         }).then(function(data) {
                     // success 
                     console.log(Result);
