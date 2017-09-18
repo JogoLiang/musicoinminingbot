@@ -68,13 +68,12 @@ var bot = linebot({
         });
             } 
             else{
-                if(msg.indexOf('雲龍說 ') != -1){
-                    var n = Math.floor(Math.random() * 63);
+                if(msg.indexOf('雲龍說 ') != -1){                    
                      var search = msg.replace('雲龍說 ');                          
                     event.reply({
                 type: 'image',
-                            originalContentUrl: 'https://memegeneratorapi.herokuapp.com/img/'+n+'/text/'+search+'/B&W/W',
-                            previewImageUrl: 'https://memegeneratorapi.herokuapp.com/img/'+n+'/text/'+search+'/B&W/W'
+                            originalContentUrl: 'https://memegeneratorapi.herokuapp.com/img/64/text/'+search+'/B&W/W',
+                            previewImageUrl: 'https://memegeneratorapi.herokuapp.com/img/64/text/'+search+'/B&W/W'
                         }).then(function(data) {
                     // success 
                     //console.log(Result);
