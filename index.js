@@ -48,26 +48,32 @@ var bot = linebot({
         // }else{
             
             var user = event.source.userId;
-            console.log("用戶:"+user+" 訊息:"+msg)
-            if(user == 'Ua7b8fef02ed7ad95a82a9a0f2be3a6df')
+            //console.log("用戶:"+user+" 訊息:"+msg)
+            if(user == 'Ued1c33a57c5ac119505f9500dc87378b')
             {
-                var Arr = ["霸主中的霸豬!你在工三小?","我看你被閃電打不夠喔?","你是不是想頂桌子?","你是在渴望尛?"];  
-                var n = Math.floor(Math.random() * Arr.length + 1)-1;  
-                Result = Arr[n];
+                console.log("他就是雲龍")
+                // var Arr = ["霸主中的霸豬!你在工三小?","我看你被閃電打不夠喔?","你是不是想頂桌子?","你是在渴望尛?"];  
+                // var n = Math.floor(Math.random() * Arr.length + 1)-1;  
+                // Result = Arr[n];
             } else{
-                var Arr = ["好! "+msg];  
-                var n = Math.floor(Math.random() * Arr.length + 1)-1;  
-                Result = Arr[n];
-            }           
-           event.reply(Result).then(function(data) {
-        // success 
-        console.log(Result);
-        }).catch(function(error) {
-        // error 
-        console.log('error');
-        });
+                // var Arr = ["好! "+msg];  
+                // var n = Math.floor(Math.random() * Arr.length + 1)-1;  
+                // Result = Arr[n];
+        //     }           
+        //    event.reply(Result).then(function(data) {
+        // // success 
+        // console.log(Result);
+        // }).catch(function(error) {
+        // // error 
+        // console.log('error');
+        // });
         // }
-        
+                    event.reply({
+                type: 'image',
+                originalContentUrl: 'https://memegeneratorapi.herokuapp.com/img/1/text/GGGGGGGG/B&W/W',
+                previewImageUrl: 'https://memegeneratorapi.herokuapp.com/img/1/text/GGGGGGGG/B&W/W'
+            });
+            }
     }catch(err){
         Result = '別玩壞我!'
             event.reply(Result).then(function(data) {
