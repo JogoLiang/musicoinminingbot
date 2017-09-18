@@ -70,11 +70,11 @@ var bot = linebot({
             else{
                 if(msg.indexOf('雲龍說 ') != -1){
                     var n = Math.floor(Math.random() * 63);
-                    var search = msg.split(" ");                    
+                     var search = msg.replace('雲龍說 ');                          
                     event.reply({
                 type: 'image',
-                            originalContentUrl: 'https://memegeneratorapi.herokuapp.com/img/'+n+'/text/'+search[1]+'/B&W/W',
-                            previewImageUrl: 'https://memegeneratorapi.herokuapp.com/img/'+n+'/text/'+search[1]+'/B&W/W'
+                            originalContentUrl: 'https://memegeneratorapi.herokuapp.com/img/'+n+'/text/'+search+'/B&W/W',
+                            previewImageUrl: 'https://memegeneratorapi.herokuapp.com/img/'+n+'/text/'+search+'/B&W/W'
                         }).then(function(data) {
                     // success 
                     //console.log(Result);
@@ -86,8 +86,8 @@ var bot = linebot({
                 else if(msg.indexOf('parrotbro ') != -1)
                 {
                     var n = Math.floor(Math.random() * 63);
-                    var search = msg.split(" ");       
-                     var ss = 'https://memegeneratorapi.herokuapp.com/img/'+n+'/text/'+search[1]+'/B&W/W'    
+                    var search = msg.replace('parrotbro ');       
+                     var ss = 'https://memegeneratorapi.herokuapp.com/img/'+n+'/text/'+search+'/B&W/W'    
                      console.log(ss)        
                     event.reply({
                 type: 'image',
