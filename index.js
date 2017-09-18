@@ -72,7 +72,13 @@ var bot = linebot({
                 type: 'image',
                 originalContentUrl: 'https://memegeneratorapi.herokuapp.com/img/1/text/GGGGGGGG/B&W/W',
                 previewImageUrl: 'https://memegeneratorapi.herokuapp.com/img/1/text/GGGGGGGG/B&W/W'
-            });
+            }).then(function(data) {
+        // success 
+        console.log(Result);
+        }).catch(function(error) {
+        // error 
+        console.log('error');
+        });
             }
     }catch(err){
         Result = '別玩壞我!'
