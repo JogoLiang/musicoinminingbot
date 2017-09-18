@@ -55,7 +55,48 @@ var bot = linebot({
                 // var Arr = ["霸主中的霸豬!你在工三小?","我看你被閃電打不夠喔?","你是不是想頂桌子?","你是在渴望尛?"];  
                 // var n = Math.floor(Math.random() * Arr.length + 1)-1;  
                 // Result = Arr[n];
-            } else{
+                event.reply({
+                type: 'image',
+                originalContentUrl: 'https://memegeneratorapi.herokuapp.com/img/64/text/'+msg+'/B&W/W',
+                previewImageUrl: 'https://memegeneratorapi.herokuapp.com/img/64/text/'+msg+'/B&W/W'
+                        }).then(function(data) {
+                    // success 
+                    console.log(msg);
+                    }).catch(function(error) {
+                    // error 
+                    console.log('error');
+        });
+            } 
+            else{
+                if(msg.indexOf('雲龍說 ') != -1){
+                    var search = msg.split(" ");                    
+                    event.reply({
+                type: 'image',
+                            originalContentUrl: 'https://memegeneratorapi.herokuapp.com/img/1/text/'+search[2]+'/B&W/W',
+                            previewImageUrl: 'https://memegeneratorapi.herokuapp.com/img/1/text/'+search[2]+'/B&W/W'
+                        }).then(function(data) {
+                    // success 
+                    console.log(Result);
+                    }).catch(function(error) {
+                    // error 
+                    console.log('error');
+                    });
+                }else if(msg.indexOf('parrotbro ') != -1)
+                {
+                    var n = Math.floor(Math.random() * 63);
+                    var search = msg.split(" ");                    
+                    event.reply({
+                type: 'image',
+                            originalContentUrl: 'https://memegeneratorapi.herokuapp.com/img/'+n+'/text/'+search[2]+'/B&W/W',
+                            previewImageUrl: 'https://memegeneratorapi.herokuapp.com/img/'+n+'/text/'+search[2]+'/B&W/W'
+                        }).then(function(data) {
+                    // success 
+                    console.log(Result);
+                    }).catch(function(error) {
+                    // error 
+                    console.log('error');
+                    });
+                }
                 // var Arr = ["好! "+msg];  
                 // var n = Math.floor(Math.random() * Arr.length + 1)-1;  
                 // Result = Arr[n];
@@ -68,17 +109,7 @@ var bot = linebot({
         // console.log('error');
         // });
         // }
-                    event.reply({
-                type: 'image',
-                originalContentUrl: 'https://memegeneratorapi.herokuapp.com/img/1/text/GGGGGGGG/B&W/W',
-                previewImageUrl: 'https://memegeneratorapi.herokuapp.com/img/1/text/GGGGGGGG/B&W/W'
-            }).then(function(data) {
-        // success 
-        console.log(Result);
-        }).catch(function(error) {
-        // error 
-        console.log('error');
-        });
+                    
             }
     }catch(err){
         Result = '別玩壞我!'
