@@ -46,9 +46,9 @@ var bot = linebot({
         //     });     
         
         // }else{
-             console.log("用戶:"+user+" 訊息:"+msg)
+            
             var user = event.source.userId;
-           
+            console.log("用戶:"+user+" 訊息:"+msg)
             if(user == 'Ua7b8fef02ed7ad95a82a9a0f2be3a6df')
             {
                 var Arr = ["霸主中的霸豬!你在工三小?","我看你被閃電打不夠喔?","你是不是想頂桌子?","你是在渴望尛?"];  
