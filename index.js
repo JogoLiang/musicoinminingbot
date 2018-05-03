@@ -1,4 +1,4 @@
-var linebot = require('linebot');
+﻿var linebot = require('linebot');
 var express = require('express');
 var getJSON = require('get-json');
 
@@ -19,6 +19,7 @@ var bot = linebot({
         var Result = '';
         var replyMsg = '';
         console.log(msg);
+console.log(msg);
         try{
         // if(msg.indexOf('小咖 MC查詢 ') != -1){
         // console.log('查詢');
